@@ -8,9 +8,11 @@ import { Progress } from '@radix-ui/react-progress';
 export default function Home() {
   return (
     <>
-      <Button variant="elevated">Hello</Button>
+      <Button variant="elevated">Helloww</Button>
       <Input value={'Enter text here'}></Input>
-      <Progress value={50} />
+      {/* <Progress value={50} /> */}
+
+      <Progress value={55} className="h-5"></Progress>
       <Textarea placeholder="fff" />
     </>
   );
