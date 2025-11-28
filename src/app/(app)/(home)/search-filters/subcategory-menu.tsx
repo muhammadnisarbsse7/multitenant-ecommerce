@@ -1,9 +1,10 @@
 import { Category } from '@/types/payload-augment';
 import Link from 'next/link';
-import { CustomCategory } from '../types';
+// import { CustomCategory } from '../types';
+import { CategoriesGetManyOutput } from '@/modules/categories/types';
 
 interface Props {
-  category: CustomCategory;
+  category: CategoriesGetManyOutput[1];
   isOpen: boolean;
   position: { top: number; left: number };
 }
@@ -30,7 +31,7 @@ export const SubcategoryMenu = ({ category, isOpen, position }: Props) => {
       >
         <div>
           {(category.subcategories ?? [])
-            .filter((s): s is Category => typeof s !== 'string')
+            .filter((s: Category | string): s is Category => typeof s !== 'string')
             .map((subcategory: Category) => (
               <Link
                 key={subcategory.slug}
