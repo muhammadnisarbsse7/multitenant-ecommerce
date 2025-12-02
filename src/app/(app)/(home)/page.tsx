@@ -1,12 +1,10 @@
-// import configPromise from '@payload-config';
-// import { getPayload } from 'payload';
+'use client';
 
-// import { getQueryClient, trpc } from '@/trpc/server';
+import { useTRPC } from '@/trpc/client';
+import { useQuery } from '@tanstack/react-query';
 
 export default function Home() {
-  return (
-    <div>
-      <p>Home</p>
-    </div>
-  );
+  const trpc = useTRPC();
+  const { data } = useQuery(trpc.auth.session.queryOptions());
+  return <div>{JSON.stringify(data?.user, null, 2)}</div>;
 }
