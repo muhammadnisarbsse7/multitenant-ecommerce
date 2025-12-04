@@ -2,7 +2,7 @@
 
 import { Input } from '@/components/ui/input';
 import { BookmarkCheckIcon, ListFilterIcon, SearchIcon } from 'lucide-react';
-import { CustomCategory } from '../types';
+import { CustomCategory } from '../../../../../app/(app)/(home)/types';
 import { CategoriesSidebar } from './categories-sidebar';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
